@@ -29,7 +29,6 @@ const Dashboard = () => {
   const catData = Object.entries(data.byCategory).map(([k, v]) => ({ name: k, value: v }))
   const monthData = Object.entries(data.byMonth).map(([k, v]) => ({ month: k, value: v }))
 
-  // ฟังก์ชันแปลง string เป็นสี (คงที่เสมอ)
   const stringToColor = (str: string) => {
     let hash = 0
     for (let i = 0; i < str.length; i++) {
@@ -42,14 +41,13 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       <div className="bg-white rounded-lg shadow-md p-6 text-center">
-        <h3 className="text-lg font-semibold text-black">💰 Total Expenses</h3>
+        <h3 className="text-lg font-semibold text-black">Total Expenses</h3>
         <p className="text-3xl font-bold text-gray-500 mt-3">
           {data.total.toFixed ? data.total.toFixed(2) : data.total} ฿
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Pie Chart */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-lg font-semibold text-black mb-4">Category Distribution</h3>
           <div className="w-full h-72">
@@ -67,7 +65,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Bar Chart */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-lg font-semibold text-black mb-4">Monthly Trend</h3>
           <div className="w-full h-72">

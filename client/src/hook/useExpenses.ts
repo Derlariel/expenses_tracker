@@ -6,7 +6,7 @@ import type { Expense, Category } from "../types/expense";
 export default function useExpenses() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [filters, setFilters] = useState({ startDate: "", endDate: "", categoryId: "" });
+  const [filters, setFilters] = useState({ startDate: "", endDate: "", categoryId: "" , sort: "expense_date", order: "desc" });
 
   const loadCategories = async () => setCategories(await getCategories());
   const loadExpenses = async () => setExpenses(await getExpenses(filters));

@@ -2,7 +2,7 @@ import type { Category } from "../../types/expense"
 
 interface FilterProps {
   categories: Category[]
-  filters: { startDate: string; endDate: string; categoryId: string }
+  filters: { startDate: string; endDate: string; categoryId: string; sort: string; order: string }
   onFilterChange: (filters: any) => void
   onRefresh: () => void
 }
@@ -51,6 +51,33 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
                 {c.name}
               </option>
             ))}
+          </select>
+        </div>
+
+        {/* Sort By */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-500 mb-1">Sort By</label>
+          <select
+            value={filters.sort || "expense_date"}
+            onChange={(e) => handleChange("sort", e.target.value)}
+            className="rounded-lg border-gray-300 text-gray-700 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+          >
+            <option value="expense_date">Date</option>
+            <option value="amount">Amount</option>
+            <option value="created_at">Created At</option>
+          </select>
+        </div>
+
+        {/* Order */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-500 mb-1">Order</label>
+          <select
+            value={filters.order || "desc"}
+            onChange={(e) => handleChange("order", e.target.value)}
+            className="rounded-lg border-gray-300 text-gray-700 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+          >
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
           </select>
         </div>
 
