@@ -15,7 +15,6 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
   return (
     <div className="bg-white rounded-xl shadow-md p-6 border border-blue-100">
       <div className="flex flex-wrap gap-6 items-end">
-        {/* Start Date */}
         <div>
           <label className="block text-sm font-semibold text-gray-500 mb-1">Start Date</label>
           <input
@@ -26,7 +25,6 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
           />
         </div>
 
-        {/* End Date */}
         <div>
           <label className="block text-sm font-semibold text-gray-500 mb-1">End Date</label>
           <input
@@ -37,7 +35,6 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
           />
         </div>
 
-        {/* Category */}
         <div>
           <label className="block text-sm font-semibold text-gray-500 mb-1">Category</label>
           <select
@@ -54,7 +51,6 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
           </select>
         </div>
 
-        {/* Sort By */}
         <div>
           <label className="block text-sm font-semibold text-gray-500 mb-1">Sort By</label>
           <select
@@ -68,7 +64,6 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
           </select>
         </div>
 
-        {/* Order */}
         <div>
           <label className="block text-sm font-semibold text-gray-500 mb-1">Order</label>
           <select

@@ -12,12 +12,10 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-indigo-600 to-indigo-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <h1 className="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
             <span>Expense Tracker</span>
           </h1>
 
-          {/* Links */}
           <div className="flex space-x-6">
             {navItems.map((item) => (
               <Link

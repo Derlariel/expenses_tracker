@@ -28,4 +28,23 @@ INSERT INTO categories (name) VALUES
   ('Food'), ('Travel'), ('Entertainment'), ('Bills'), ('Shopping'), ('Health'), ('Other')
 ON DUPLICATE KEY UPDATE name=VALUES(name);
 
-select * from categories;
+select * from expenses;
+
+ALTER TABLE expenses
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+INSERT INTO expenses (user_id, category_id, amount, description, expense_date)
+VALUES
+  (NULL, 1, 500, 'Lunch', '2025-07-03'),
+  (NULL, 2, 1200, 'Taxi', '2025-07-05'),
+  (NULL, 3, 800, 'Movie', '2025-07-10'),
+  (NULL, 4, 1500, 'Electric Bill', '2025-07-15'),
+  (NULL, 5, 2200, 'New Shoes', '2025-08-02'),
+  (NULL, 6, 950, 'Hospital', '2025-08-08'),
+  (NULL, 1, 400, 'Dinner', '2025-08-12'),
+  (NULL, 7, 600, 'Misc', '2025-08-20'),
+  (NULL, 2, 3000, 'Plane Ticket', '2025-09-01'),
+  (NULL, 3, 700, 'Concert', '2025-09-07'),
+  (NULL, 4, 1800, 'Water Bill', '2025-09-10'),
+  (NULL, 6, 1300, 'Medicine', '2025-09-14');
+
