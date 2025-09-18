@@ -7,7 +7,7 @@ interface FilterProps {
   onRefresh: () => void
 }
 
-const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: FilterProps) => {
+const ExpenseFilter = ({ categories, filters, onFilterChange }: FilterProps) => {
   const handleChange = (key: string, value: string) => {
     onFilterChange({ ...filters, [key]: value })
   }
@@ -77,10 +77,12 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
         </div>
 
         <button
-          onClick={onRefresh}
+          onClick={() => {
+            onFilterChange({ startDate: "", endDate: "", categoryId: "", sort: "expense_date", order: "desc" })
+          }}
           className="ml-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md transition transform hover:scale-105"
         >
-          Refresh
+          Clear
         </button>
       </div>
     </div>
