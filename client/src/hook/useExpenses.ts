@@ -14,7 +14,9 @@ export default function useExpenses() {
   useEffect(() => { loadCategories(); }, []);
   useEffect(() => { loadExpenses(); }, [filters]);
 
-  const refresh = () => loadExpenses();
+  const refresh = async () => {
+    setExpenses(await getExpenses(filters));
+  }
 
   const onCreate = async (payload: Partial<Expense>) => {
     await createExpense(payload);

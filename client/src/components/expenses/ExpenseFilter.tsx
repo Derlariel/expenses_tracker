@@ -65,7 +65,7 @@ const ExpenseFilter = ({ categories, filters, onFilterChange, onRefresh }: Filte
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-500 mb-1">Order</label>
+          <label className="bl ock text-sm font-semibold text-gray-500 mb-1">Order</label>
           <select
             value={filters.order || "desc"}
             onChange={(e) => handleChange("order", e.target.value)}
