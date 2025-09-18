@@ -6,15 +6,15 @@ docker compose up -d --build
 ```
 - Frontend: http://localhost:5173
 - Backend:  http://localhost:8080/api/health
-- MySQL:    localhost:3306 (user: root / password: rootpass)
+- MySQL:    localhost:3306 (user: expenses_user / password: rootpass)
 
 ## Env
 Create `.env` in the project root or use defaults from `docker-compose.yml`:
 ```
-MYSQL_HOST=db
+MYSQL_HOST=localhost
 MYSQL_PORT=3306
-MYSQL_DATABASE=expenses_db
-MYSQL_USER=root
+MYSQL_DATABASE=expenses_tracker
+MYSQL_USER=expenses_user
 MYSQL_PASSWORD=rootpass
 BACKEND_PORT=8080
 FRONTEND_PORT=5173
